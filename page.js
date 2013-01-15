@@ -1,3 +1,3 @@
 jQuery(document).ready(function () {
-    new onBoardingTool.DeleteLatestReportIssueOnLiveDialogView(new onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel());
+    new app.DialogView(new app.DialogModel());
 }); 

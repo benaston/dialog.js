@@ -1,15 +1,15 @@
-var onBoardingTool = onBoardingTool || {};
+var app = app || {};
 
-onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel = function () {
+app.DialogModel = function () {
     "use strict";
 
-    if (!(this instanceof onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel)) {
-        return new onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel();
+    if (!(this instanceof app.DialogModel)) {
+        return new app.DialogModel();
     }
 
     var self = this;
 
-    this.updateNotificationUri = "update://onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel";
+    this.updateNotificationUri = "update://app.DialogModel";
 
     self.isVisible = false;
 
@@ -21,43 +21,7 @@ onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel = function () {
         self.isVisible = isVisible;
         $.publish(self.updateNotificationUri);
     };
-
-    this.getTemplateId = function () {
-        return self.templateId;
-    };
-
-    this.setTemplateId = function (id) {
-        self.templateId = id;
-        $.publish(self.updateNotificationUri);
-    };
-
-    this.getReportIssueId = function () {
-        return self.reportIssueId;
-    };
-
-    this.setReportIssueId = function (id) {
-        self.reportIssueId = id;
-        $.publish(self.updateNotificationUri);
-    };
-
-    this.getTemplateName = function () {
-        return self.templateName;
-    };
-
-    this.setTemplateName = function (name) {
-        self.templateName = name;
-        $.publish(self.updateNotificationUri);
-    };
-
-    this.getTitleDate = function () {
-        return self.titleDate;
-    };
     
-    this.setTitleDate = function (titleDate) {
-        self.titleDate = titleDate;
-        $.publish(self.updateNotificationUri);
-    };
-
     this.getState = function () {
         return self.state;
     };
@@ -66,26 +30,21 @@ onBoardingTool.DeleteLatestReportIssueOnLiveDialogModel = function () {
         self.state = state;
         $.publish(self.updateNotificationUri);
     };
-    
-    this.updateReportIssueInfoFromLive = function () {
-        self.setState("waiting");
-        $.ajax("/reportissuesonlivelatestavailabletopull/show/" + self.templateId, {
-            type: "GET",
-            cache: false,
-            success: function (data) {
-                self.titleDate = data.Value1;
-                self.reportIssueId = data.Value2;
+	
+	this.getFooInformation = function () {
+        return self.fooInformation;
+    };
 
-                if(self.reportIssueId === "") {
-                    self.setState("missing-issue");
-                } else {
-                    self.setState("success");
-                }
-            },
-            error: function (xhr, textStatus, error) {
-                self.setState("error");
-            }
-        });
+    this.setFooInformation = function (fooInformation) {
+        self.fooInformation = fooInformation;
+        $.publish(self.updateNotificationUri);
+    };
+    
+    this.exampleCustomLogic = function () {
+        self.setState("waiting");
+		setTimeout(function(){
+			self.setState('success');
+		}, 2000);
     };
 
     function init() {

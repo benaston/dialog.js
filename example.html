@@ -1,38 +1,56 @@
-<a href="#" class="btn btn-danger btn-mini btn-delete-latest-report-issue-on-live" title="@Content.DeleteLatestReportIssueOnLive">@Content.DeleteLatestReportIssueOnLive</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">	
+	<link href="./style.css" rel="stylesheet">	
+</head>
+<body>
+	<section>
+		<article data-foo-info="Foo Information 1">
+		</article>
+	</section>
+	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
 
-<div id="delete-latest-report-issue-on-live-dialog-wrapper" class="popup-wrapper" 
+	<div id="example-dialog-wrapper" class="dialog-wrapper" 
          data-state=""
-         data-strings='{"title":"@Content.DeleteLatestReportIssueOnLive", "message-waiting":"@Content.RetrievingReportIssueInformation", "message-success":"&lt;p&gt;@Content.AreYouSureYouWantToDeleteTheLatestIssueforThisReport&lt;/p&gt;&lt;p class=\"important-text\"&gt;@Content.AnyChangesMadeByTheEditorWillBeLostIfYouClickOnYes&lt;/p&gt;", "message-error":"@Content.ErrorRetrievingReportIssueInformation", "message-missing-issue":"@Content.ThereIsNoLongerAnIssueToBePulled", "alt-spinner":"Loading Indicator"}'
-         data-resources='{"spinner":"/Content/images/spinner.png"}'>
-        <form method="POST">
-            <div class="popup-window">
-                <h3></h3>
-                <div class="waiting">
-                    <img class="spinner" src="" alt=""/>
-                    <div class="message"></div>
-                    <div class="buttons">
-                        <a class="btn btn-info btn-mini goBack">@Content.Cancel</a>
-                    </div>
-                </div>
-                <div class="success">
-                    <div class="message"></div>
-                    <div class="buttons">
-                        <a class="btn btn-warning btn-mini continue">@Content.Yes</a> 
-                        <a class="btn btn-info btn-mini goBack">@Content.No</a>
-                    </div>
-                </div>
-                <div class="error">
-                    <div class="message"></div>
-                    <div class="buttons">
-                        <a class="btn btn-info btn-mini goBack">@Content.OK</a> 
-                    </div>
-                </div>
-                <div class="missing-issue">
-                    <div class="message"></div>
-                    <div class="buttons">
-                        <a class="btn btn-info btn-mini goBack">@Content.OK</a> 
-                    </div>
-                </div>
+         data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"&lt;p&gt;Would you like to foo?&lt;/p&gt;&lt;p class=\"important-text\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "message-custom":"This is a custom message.", "alt-spinner":"Loading Indicator"}'
+         data-resources='{"spinner":"./spinner.png"}'>
+        <form method="POST" action="#">
+            <div class="dialog">			
+				<h3></h3>
+				<div class="waiting">
+					<img class="spinner" src="" alt=""/>
+					<p class="message lead"></p>
+					<div class="buttons">
+						<input type="button" class="btn btn-cancel" value="Cancel">	                        
+					</div>
+				</div>
+				<div class="success">
+					<p class="message"></p>
+					<div class="buttons">
+						<input type="button" class="btn btn-success btn-continue" value="Yes">	
+						<input type="button" class="btn btn-cancel" value="No">	
+					</div>
+				</div>
+				<div class="error">
+					<p class="message"></p>
+					<div class="buttons">
+						<input type="button" class="btn btn-cancel" value="OK">	
+					</div>
+				</div>
+				<div class="custom-state">
+					<p class="message"></p>
+					<div class="buttons">
+						<input type="button" class="btn btn-cancel" value="OK">	
+					</div>
+				</div>
             </div>
         </form>
     </div>
+	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<script src="./tiny-pub-sub.js"></script>
+	<script src="./model.js"></script>
+	<script src="./view.js"></script>
+	<script src="./page.js"></script>
+</body>
+
