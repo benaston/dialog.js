@@ -1,7 +1,7 @@
 dialog.js
 =========
 
-Simple Modal Dialog Functionality.
+Simple client-side modal dialog functionality.
 
 Includes:
 
