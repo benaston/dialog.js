@@ -16,35 +16,35 @@
          data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"&lt;p&gt;Would you like to foo?&lt;/p&gt;&lt;p class=\"important-text\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "message-custom":"This is a custom message.", "alt-spinner":"Loading Indicator"}'
          data-resources='{"spinner":"./spinner.png"}'>
         <form method="POST" action="#">
-            <div class="dialog">			
+            <aside class="dialog">			
 				<h3></h3>
 				<div class="waiting">
 					<img class="spinner" src="" alt=""/>
 					<p class="message lead"></p>
-					<div class="buttons">
+					<menu class="buttons">
 						<input type="button" class="btn btn-cancel" value="Cancel">	                        
-					</div>
+					</menu>
 				</div>
 				<div class="success">
 					<p class="message"></p>
-					<div class="buttons">
+					<menu class="buttons">
 						<input type="button" class="btn btn-success btn-continue" value="Yes">	
 						<input type="button" class="btn btn-cancel" value="No">	
-					</div>
+					</menu>
 				</div>
 				<div class="error">
 					<p class="message"></p>
-					<div class="buttons">
+					<menu class="buttons">
 						<input type="button" class="btn btn-cancel" value="OK">	
-					</div>
+					</menu>
 				</div>
 				<div class="custom-state">
 					<p class="message"></p>
-					<div class="buttons">
+					<menu class="buttons">
 						<input type="button" class="btn btn-cancel" value="OK">	
-					</div>
+					</menu>
 				</div>
-            </div>
+            </aside>
         </form>
     </div>
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
