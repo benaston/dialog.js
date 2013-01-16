@@ -10,6 +10,7 @@ app.DialogView = function (model) {
     var self = this;
 
     this.$el = $("#example");
+    this.$grayCurtain = $("#gray-curtain");
     this.$btnSuccess = self.$el.find(".btn-success");
     this.$btnShow = $(".btn-show-dialog");
     this.$btnHide = self.$el.find(".btn-cancel");
@@ -22,12 +23,16 @@ app.DialogView = function (model) {
 
     this.onShow = function (e) {               		
         self.Model.exampleCustomLogic();
-        $(document).keyup(self.onKeyUp);
-        self.Model.setVisibility(true);
+        $(document).keyup(self.onKeyUp);        
+		self.Model.setDialogVisibility(true);
+		self.Model.setCurtainVisibility(true);		
+		self.Model.setIsFlipped(false);		
     };
 
     this.onHide = function () {
-        self.Model.setVisibility(false);
+        self.Model.setCurtainVisibility(false);
+        self.Model.setDialogVisibility(false);		
+		setTimeout(function() { self.Model.setIsFlipped(true) }, 350);
         $(document).unbind("keyup");
     };
 
@@ -39,16 +44,30 @@ app.DialogView = function (model) {
     };
 
     this.onSuccess = function () {
-        self.$form.submit();
+        self.Model.setIsFlipped(true);
+		self.Model.setCurtainVisibility(false);
+		setTimeout(function() { self.Model.setDialogVisibility(false) }, 350);
     };
 
     this.render = function () {        
         self.$el.attr("data-state", self.Model.getState());        
 
-        if (self.Model.getVisibility()) {
+        if (self.Model.getCurtainVisibility()) {
+            self.$grayCurtain.addClass("active");
+        } else {
+            self.$grayCurtain.removeClass("active");            
+        }
+		
+		if (self.Model.getDialogVisibility()) {
             self.$el.addClass("active");
         } else {
             self.$el.removeClass("active");            
+        }
+		
+		if (self.Model.getIsFlipped()) {
+            self.$form.addClass("flipped");
+        } else {
+            self.$form.removeClass("flipped");            
         }
     };
 

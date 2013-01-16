@@ -7,38 +7,43 @@
 <body>	
 	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
 	<div class="vertical-line"></div>
+	
+	<div id="gray-curtain"></div>
 	<div id="example" class="dialog-wrapper" 
-		 data-state=""
-		 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text\"&gt;Beware of the bam!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
-		 data-resources='{"spinner":"./spinner.png"}'>
-		<form method="POST" action="">
-			<aside class="dialog">			
-				<header class="sheen">
-					<h3></h3>
-				</header>				
-				<div class="waiting">
-					<img class="spinner" src="" alt=""/>
-					<p class="message"></p>
-					<menu>
-						<input type="button" class="btn btn-cancel" value="Cancel">	                        
-					</menu>
-				</div>
-				<div class="success">
-					<p class="message"></p>
-					<menu>
-						<input type="button" class="btn btn-success" value="Yes">	
-						<input type="button" class="btn btn-cancel" value="No">	
-					</menu>
-				</div>
-				<div class="error">
-					<p class="message"></p>
-					<menu>
-						<input type="button" class="btn btn-cancel" value="OK">	
-					</menu>
-				</div>				
-			</aside>
-		</form>
+			 data-state=""
+			 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text\"&gt;Beware of the bam!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
+			 data-resources='{"spinner":"./spinner.png"}'>
+		 <div class="three-d-context">
+			<form method="POST" action="" class="flipped">
+				<aside class="dialog front">
+					<header class="sheen">
+						<h3></h3>
+					</header>				
+					<div class="waiting">
+						<img class="spinner" src="" alt=""/>
+						<p class="message"></p>
+						<menu>
+							<input type="button" class="btn btn-cancel" value="Cancel">	                        
+						</menu>
+					</div>
+					<div class="success">
+						<p class="message"></p>
+						<menu>
+							<input type="button" class="btn btn-success" value="Yes">	
+							<input type="button" class="btn btn-cancel" value="No">	
+						</menu>
+					</div>
+					<div class="error">
+						<p class="message"></p>
+						<menu>
+							<input type="button" class="btn btn-cancel" value="OK">	
+						</menu>
+					</div>				
+				</aside>				
+			</form>
+		</div>
 	</div>
+	
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 	<script src="./tiny-pub-sub.js"></script>
 	<script src="./model.js"></script>

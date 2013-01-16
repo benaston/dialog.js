@@ -13,12 +13,21 @@ app.DialogModel = function () {
 
     self.isVisible = false;
 
-    this.getVisibility = function () {
-        return self.isVisible;
+    this.getCurtainVisibility = function () {
+        return self.isCurtainVisible;
     };
 
-    this.setVisibility = function (isVisible) {
-        self.isVisible = isVisible;
+    this.setCurtainVisibility = function (isVisible) {
+        self.isCurtainVisible = isVisible;
+        $.publish(self.updateNotificationUri);
+    };
+	
+	this.getDialogVisibility = function () {
+        return self.isDialogVisible;
+    };
+
+    this.setDialogVisibility = function (isVisible) {
+        self.isDialogVisible = isVisible;
         $.publish(self.updateNotificationUri);
     };
     
@@ -28,6 +37,15 @@ app.DialogModel = function () {
 
     this.setState = function (state) {
         self.state = state;
+        $.publish(self.updateNotificationUri);
+    };
+	
+	this.getIsFlipped = function () {
+        return self.isFlipped;
+    };
+
+    this.setIsFlipped = function (isFlipped) {	
+        self.isFlipped = isFlipped;
         $.publish(self.updateNotificationUri);
     };
    
