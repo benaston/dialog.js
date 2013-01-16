@@ -9,8 +9,8 @@ app.DialogView = function (model) {
 
     var self = this;
 
-    this.$el = $("#example-dialog-wrapper");
-    this.$btnContinue = self.$el.find(".btn-continue");
+    this.$el = $("#example");
+    this.$btnSuccess = self.$el.find(".btn-success");
     this.$btnShow = $(".btn-show-dialog");
     this.$btnHide = self.$el.find(".btn-cancel");
     this.$form = self.$el.find("form");    
@@ -63,7 +63,7 @@ app.DialogView = function (model) {
         self.Model = model;
         self.$btnShow.click(self.onShow);
         self.$btnHide.click(self.onHide);
-        self.$btnContinue.click(self.onContinue);
+        self.$btnSuccess.click(self.onContinue);
         self.initDom();
 
         $.subscribe(self.Model.updateNotificationUri, self.render);

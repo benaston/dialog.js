@@ -7,42 +7,36 @@
 <body>	
 	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
 
-	<div id="example-dialog-wrapper" class="dialog-wrapper" 
-         data-state=""
-         data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"&lt;p&gt;Would you like to foo?&lt;/p&gt;&lt;p class=\"important-text\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "message-custom":"This is a custom message.", "alt-spinner":"Loading Indicator"}'
-         data-resources='{"spinner":"./spinner.png"}'>
-        <form method="POST" action="#">
-            <aside class="dialog">			
+	<div id="example" class="dialog-wrapper" 
+		 data-state=""
+		 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"&lt;p&gt;Would you like to foo?&lt;/p&gt;&lt;p class=\"important-text\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
+		 data-resources='{"spinner":"./spinner.png"}'>
+		<form method="POST" action="">
+			<aside class="dialog">			
 				<h3></h3>
 				<div class="waiting">
 					<img class="spinner" src="" alt=""/>
 					<p class="message"></p>
-					<menu class="buttons">
+					<menu>
 						<input type="button" class="btn btn-cancel" value="Cancel">	                        
 					</menu>
 				</div>
 				<div class="success">
 					<p class="message"></p>
-					<menu class="buttons">
-						<input type="button" class="btn btn-success btn-continue" value="Yes">	
+					<menu>
+						<input type="button" class="btn btn-success" value="Yes">	
 						<input type="button" class="btn btn-cancel" value="No">	
 					</menu>
 				</div>
 				<div class="error">
 					<p class="message"></p>
-					<menu class="buttons">
+					<menu>
 						<input type="button" class="btn btn-cancel" value="OK">	
 					</menu>
-				</div>
-				<div class="custom-state">
-					<p class="message"></p>
-					<menu class="buttons">
-						<input type="button" class="btn btn-cancel" value="OK">	
-					</menu>
-				</div>
-            </aside>
-        </form>
-    </div>
+				</div>				
+			</aside>
+		</form>
+	</div>
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 	<script src="./tiny-pub-sub.js"></script>
 	<script src="./model.js"></script>

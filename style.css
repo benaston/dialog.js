@@ -21,7 +21,7 @@ p {
 	min-width:80px
 }
 
-.buttons {
+.dialog menu {
 	display: inline-block;
 	width: 100%;
 	padding: 0;
@@ -30,15 +30,13 @@ p {
 
 .dialog-wrapper .waiting,
 .dialog-wrapper .success,
-.dialog-wrapper .error,
-.dialog-wrapper .custom-state {
+.dialog-wrapper .error {
     display: none;
 }
 
 .dialog-wrapper[data-state="waiting"] .waiting,
 .dialog-wrapper[data-state="success"] .success,
-.dialog-wrapper[data-state="error"] .error,
-.dialog-wrapper[data-state="custom-state"] .custom-state {
+.dialog-wrapper[data-state="error"] .error {
     display: block;
 }
 
