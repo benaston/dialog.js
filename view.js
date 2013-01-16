@@ -38,8 +38,7 @@ app.DialogView = function (model) {
 
     this.onKeyUp = function (e) {
         if (e.keyCode == 27) {
-            self.Model.setVisibility(false);
-            $(this).unbind(e);
+            self.onHide();
         }
     };
 

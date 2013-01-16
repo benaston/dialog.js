@@ -21,7 +21,7 @@ app.DialogModel = function () {
         self.isCurtainVisible = isVisible;
         $.publish(self.updateNotificationUri);
     };
-	
+
 	this.getDialogVisibility = function () {
         return self.isDialogVisible;
     };
@@ -39,7 +39,7 @@ app.DialogModel = function () {
         self.state = state;
         $.publish(self.updateNotificationUri);
     };
-	
+
 	this.getIsFlipped = function () {
         return self.isFlipped;
     };
