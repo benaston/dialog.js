@@ -13,8 +13,7 @@ app.DialogView = function (model) {
     this.$btnContinue = self.$el.find(".btn-continue");
     this.$btnShow = $(".btn-show-dialog");
     this.$btnHide = self.$el.find(".btn-cancel");
-    this.$form = self.$el.find("form");
-    this.$successMessage = self.$el.find(".success .message");
+    this.$form = self.$el.find("form");    
     this.$spinner = self.$el.find(".spinner");
     this.$title = self.$el.find(".dialog h3");
     this.$resources = self.$el.data("resources");
@@ -45,7 +44,6 @@ app.DialogView = function (model) {
 
     this.render = function () {        
         self.$el.attr("data-state", self.Model.getState());        
-        self.$successMessage.html(self.Model.getFooInformation());
 
         if (self.Model.getVisibility()) {
             self.$el.addClass("active");

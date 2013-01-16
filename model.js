@@ -30,16 +30,7 @@ app.DialogModel = function () {
         self.state = state;
         $.publish(self.updateNotificationUri);
     };
-	
-	this.getFooInformation = function () {
-        return self.fooInformation;
-    };
-
-    this.setFooInformation = function (fooInformation) {
-        self.fooInformation = fooInformation;
-        $.publish(self.updateNotificationUri);
-    };
-    
+   
     this.exampleCustomLogic = function () {
         self.setState("waiting");
 		setTimeout(function(){
