@@ -38,7 +38,7 @@ app.DialogView = function (model) {
         }
     };
 
-    this.onContinue = function () {
+    this.onSuccess = function () {
         self.$form.submit();
     };
 
@@ -52,8 +52,11 @@ app.DialogView = function (model) {
         }
     };
 
-    this.initDom = function () {
-        self.$spinner.attr("src", self.$resources["spinner"]);
+    this.initResources = function () {
+		self.$spinner.attr("src", self.$resources["spinner"]);
+	}	
+	
+    this.initStrings = function () {        
         self.$spinner.attr("alt", self.$strings["alt-spinner"]);
         self.$title.html(self.$strings["title"]);
         self.$messages.each(function (index) { $(this).html(self.$strings["message-" + $(this).parent("div").attr("class").split(' ')[0]]); });
@@ -63,8 +66,9 @@ app.DialogView = function (model) {
         self.Model = model;
         self.$btnShow.click(self.onShow);
         self.$btnHide.click(self.onHide);
-        self.$btnSuccess.click(self.onContinue);
-        self.initDom();
+        self.$btnSuccess.click(self.onSuccess);
+        self.initResources();
+		self.initStrings();
 
         $.subscribe(self.Model.updateNotificationUri, self.render);
 
