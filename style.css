@@ -4,15 +4,16 @@ body {
 }
 
 p {
-	padding: 4px;
+	margin: 30px 40px 0 40px;
+	color: #333;
 }
 .important-text {
     background-color: #CF1D00;
     padding: 6px !important;
     text-align: center;
     color: white;
-    margin: 25px;
-    border-radius: 5px;
+    margin: 35px 25px 25px 25px;
+    border-radius: 15px;
 }
 
 .btn {
@@ -25,7 +26,7 @@ p {
 	display: inline-block;
 	width: 100%;
 	padding: 0;
-	margin: 0;
+	margin: 17px 0px 21px -26px;
 }
 
 .dialog-wrapper .waiting,
@@ -41,12 +42,11 @@ p {
 }
 
 .waiting .message {
-    margin-left: 45px;
-    padding-top: 8px;
+    margin-left:60px;
 }
 
 .waiting .spinner {
-    margin-top: 5px;
+    margin: -4px 0 0 25px;
 }
 .dialog-wrapper {
     background-color: rgba(0,0,0,.4);
@@ -77,19 +77,47 @@ p {
     width: 500px;
     margin: auto;
     background-color: white;
-    border: 1px solid rgb(195, 221, 246);
-    margin-top: 15%;
-    padding: 10px;    
+    margin-top: 15%;    
     z-index: 101;
-    border-radius: 5px;
+    border-radius: 55px 55px 55px 5px;
+	box-shadow: 0 0 0 3px rgba(10, 10, 30, 0.5), 5px 5px 4px 4px rgba(0,0,0,0.4);
+	background-color: rgba(255, 255, 255, .95);
 }
 
-.dialog h3 {
+.vertical-line {
+	position: fixed;
+	left: 50%;
+	top:0;
+	margin: auto;
+	width: 1px;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	box-shadow: 0 0 0 4px rgba(0,0,0,0.4);
+	border: none;
+}
+
+.dialog header h3 {
+	margin: 8px 0 0 15px;
+	line-height:1;
+}
+
+.dialog header {	
+	text-shadow: 0 -1px 1px rgba(255,255,255,0.2);
     color: black;
     background-color: rgb(195, 221, 246);
-    padding: 10px;
-    border-radius: 5px;
+    padding: 14px;
+    border-radius: 55px 55px 0 0;
 	margin-top: 0;
+	outline: none;
+	border-bottom: 2px solid rgba(0,0,0,0.5);	
+}
+
+.sheen {
+	box-shadow: 0 1px rgba(255,255,255,0.3) inset,0 10px 20px rgba(255,255,255,0.25) inset !important;
+}
+
+.small-shadow {
+	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 
 .spinner {

@@ -6,14 +6,16 @@
 </head>
 <body>	
 	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
-
+	<div class="vertical-line"></div>
 	<div id="example" class="dialog-wrapper" 
 		 data-state=""
-		 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"&lt;p&gt;Would you like to foo?&lt;/p&gt;&lt;p class=\"important-text\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
+		 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text sheen\"&gt;Beware of the bar!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
 		 data-resources='{"spinner":"./spinner.png"}'>
 		<form method="POST" action="">
 			<aside class="dialog">			
-				<h3></h3>
+				<header class="sheen">
+					<h3></h3>
+				</header>				
 				<div class="waiting">
 					<img class="spinner" src="" alt=""/>
 					<p class="message"></p>
