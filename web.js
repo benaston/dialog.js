@@ -2,7 +2,7 @@ var static = require('node-static'),
   http = require('http'),
   util = require('util');
 var webroot = './',
-  port = $PORT || 8081;
+  port = process.env.PORT || 8081;
 var file = new(static.Server)(webroot, {
   cache: 600,
   headers: { 'X-Powered-By': 'node-static' }
