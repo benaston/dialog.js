@@ -9,7 +9,7 @@ Includes:
 
  - an experiment using a data attribute as a "string table"
  - CSS3 animated loading indicator
- - "MV*" JavaScript
+ - various experimental UX ideas of mine
  
 
 
