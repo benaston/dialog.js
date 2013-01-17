@@ -3,7 +3,7 @@ dialog.js
 
 Simple client-side modal dialog functionality.
 
-Example here[1].
+The included example may be found online at http://dry-ridge-4153.herokuapp.com.
 
 Includes:
 
@@ -12,4 +12,4 @@ Includes:
  - "MV*" JavaScript
  - example (example.html)
 
-[1] http://dry-ridge-4153.herokuapp.com
+
