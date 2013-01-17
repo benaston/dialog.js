@@ -109,7 +109,7 @@ visibility: hidden;
 }
 
 .dialog article {	
-	background-color: rgba(255, 255, 255, .95);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,.9)),color-stop(100%,rgba(255,255,255,.7)));
 	border-radius: 0 0 55px 5px;
 	width: 100%;
 	height: 100%;
