@@ -3,11 +3,11 @@ body {
 	font-size: 1.1em;
 }
 
-p {
-	margin: 30px 40px 0 40px;
+p {	
 	color: #333;
 	cursor: default;
 }
+
 .important-text {
     background-color: #CF1D00;
     padding: 6px !important;
@@ -16,6 +16,10 @@ p {
     margin: 35px 25px 25px 25px;
     border-radius: 15px;
 	border: 2px solid rgba(0,0,0,.5);
+}
+
+.message {
+	padding: 30px 40px 0 40px;
 }
 
 .btn {
@@ -31,24 +35,29 @@ p {
 	margin: 17px 0px 21px -26px;
 }
 
+.dialog-wrapper .spinner {
+visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity .5s linear 0s, visibility 0s linear .5s;
+}
+
+.dialog-wrapper[data-state="waiting"] .spinner {
+visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity .5s linear 0s, visibility 0 linear 0;
+}
+
+
 .dialog-wrapper .waiting,
 .dialog-wrapper .success,
 .dialog-wrapper .error {
-    display: none;
+    display:none;
 }
 
 .dialog-wrapper[data-state="waiting"] .waiting,
 .dialog-wrapper[data-state="success"] .success,
 .dialog-wrapper[data-state="error"] .error {
-    display: block;
-}
-
-.waiting .message {
-    margin-left:60px;
-}
-
-.waiting .spinner {
-    margin: -4px 0 0 25px;
+    display:block;
 }
 
 .dialog-wrapper {	
@@ -57,6 +66,7 @@ p {
 	opacity: 0;
     visibility: hidden;
 	-webkit-transition: opacity .05s linear 0s, visibility 0s linear .05s;
+	-webkit-user-select: none;
 }
 
 .dialog-wrapper.active {	
@@ -78,8 +88,7 @@ p {
     opacity: 0;
     visibility: hidden;
     display: block;
-    -webkit-transition: opacity .05s linear 0s, visibility 0s linear .05s;
-	-webkit-user-select: none;
+    -webkit-transition: opacity .05s linear 0s, visibility 0s linear .05s;	
 }
 
 #gray-curtain.active {
@@ -96,9 +105,15 @@ p {
     margin-top: 15%;    
     z-index: 101;
     border-radius: 55px 55px 55px 5px;
-	box-shadow: 0 0 0 3px rgba(10, 10, 30, 0.5), 5px 5px 4px 4px rgba(0,0,0,0.4);
+	box-shadow: 0 0 0 3px rgba(10, 10, 30, 0.5), 5px 5px 4px 4px rgba(0,0,0,0.4);	
+	border: 2px dotted rgba(0,0,0,.3);	
+}
+
+.dialog article {	
 	background-color: rgba(255, 255, 255, .95);
-	border: 2px dotted rgba(0,0,0,.3);
+	border-radius: 0 0 55px 5px;
+	width: 100%;
+	height: 100%;
 }
 
 .vertical-line {
@@ -126,7 +141,7 @@ input[type="button"] {
 .dialog header {	
 	text-shadow: 0 -1px 1px rgba(255,255,255,0.2);
     color: black;
-    background-color: rgb(195, 221, 246);
+    background-color: rgba(195, 221, 246, .95);
     padding: 14px;
     border-radius: 55px 55px 0 0;
 	margin-top: 0;
@@ -142,17 +157,25 @@ input[type="button"] {
 	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 
-.spinner {
+.spinner {	
 	display:inline-block;
 	width:25px;
 	height:25px;
 	position:absolute;
-	margin-left:10px;
+	right: 27px;
+	top: 20px;
+	border: 2px dashed rgba(0,0,0,.5);
+	border-radius: 20px;
 	-webkit-animation-name: rotate !important;
 	-webkit-animation-duration: 1600ms !important;
 	-webkit-animation-iteration-count: infinite !important;
 	-webkit-animation-timing-function: linear !important;
 }
+
+/*.dialog-wrapper[data-state="waiting"] .spinner {
+	opacity: 1;
+	-webkit-transition: opacity 1.5s linear 0;	
+}*/
 
 @-webkit-keyframes rotate {
     0% {

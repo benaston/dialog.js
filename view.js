@@ -16,8 +16,7 @@ app.DialogView = function (model) {
     this.$btnHide = self.$el.find(".btn-cancel");
     this.$form = self.$el.find("form");    
     this.$spinner = self.$el.find(".spinner");
-    this.$title = self.$el.find(".dialog h3");
-    this.$resources = self.$el.data("resources");
+    this.$title = self.$el.find(".dialog h3");    
     this.$strings = self.$el.data("strings");
     this.$messages = self.$el.find(".message");
 
@@ -68,24 +67,21 @@ app.DialogView = function (model) {
         } else {
             self.$form.removeClass("flipped");            
         }
-    };
-
-    this.initResources = function () {
-		self.$spinner.attr("src", self.$resources["spinner"]);
-	}	
+    };    
 	
-    this.initStrings = function () {        
-        self.$spinner.attr("alt", self.$strings["alt-spinner"]);
+    this.initStrings = function () {                
         self.$title.html(self.$strings["title"]);
-        self.$messages.each(function (index) { $(this).html(self.$strings["message-" + $(this).parent("div").attr("class").split(' ')[0]]); });
+        self.$messages.each(
+			function (index) { 
+				$(this).html(self.$strings["message-" + $(this).parent("article").attr("class").split(' ')[0]]); 
+			});
     };
 
     function init() {
         self.Model = model;
         self.$btnShow.click(self.onShow);
         self.$btnHide.click(self.onHide);
-        self.$btnSuccess.click(self.onSuccess);
-        self.initResources();
+        self.$btnSuccess.click(self.onSuccess);        
 		self.initStrings();
 
         $.subscribe(self.Model.updateNotificationUri, self.render);

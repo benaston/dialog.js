@@ -11,35 +11,35 @@
 	<div id="gray-curtain"></div>
 	<div id="example" class="dialog-wrapper" 
 			 data-state=""
-			 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text\"&gt;Beware of the bam!&lt;/p&gt;", "message-error":"Oops an error has occurred.", "alt-spinner":"Loading Indicator"}'
-			 data-resources='{"spinner":"./spinner.png"}'>
+			 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text\"&gt;Beware of the bam!&lt;/p&gt;", "message-error":"Oops an error has occurred."}'
+			 '>
 		 <div class="three-d-context">
 			<form method="POST" action="" class="flipped">
-				<aside class="dialog front">
+				<section class="dialog front">
 					<header class="sheen">
 						<h3></h3>
 					</header>				
-					<div class="waiting">
-						<img class="spinner" src="" alt=""/>
+					<div class="spinner"></div>
+					<article class="waiting">											
 						<p class="message"></p>
 						<menu>
 							<input type="button" class="btn btn-cancel" value="Cancel">	                        
 						</menu>
-					</div>
-					<div class="success">
+					</article>
+					<article class="success">
 						<p class="message"></p>
 						<menu>
 							<input type="button" class="btn btn-success" value="Yes">	
 							<input type="button" class="btn btn-cancel" value="No">	
 						</menu>
-					</div>
-					<div class="error">
+					</article>
+					<article class="error">
 						<p class="message"></p>
 						<menu>
 							<input type="button" class="btn btn-cancel" value="OK">	
-						</menu>
-					</div>				
-				</aside>				
+						</menu>						
+					</article>
+				</section>				
 			</form>
 		</div>
 	</div>
