@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Copyright Ben Aston 2013. All rights reserved. -->
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">	
 	<link href="./style.css" rel="stylesheet">	
+	<noscript>
+		<style>
+			#example{display:none !important;}
+			#no-script{display:block !important;}
+		</style>
+	</noscript>	
 </head>
 <body>	
 	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
@@ -42,7 +49,11 @@
 			</form>
 		</div>
 	</div>
-	
+	<noscript>
+		<div id="no-script">
+			<h1>This website requires <em>JavaScript</em>.</h1>
+		</div>
+	</noscript>
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 	<script src="./tiny-pub-sub.js"></script>
 	<script src="./model.js"></script>
