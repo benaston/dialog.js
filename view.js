@@ -15,7 +15,6 @@ app.DialogView = function (model) {
     this.$btnShow = $(".btn-show-dialog");
     this.$btnHide = self.$el.find(".btn-cancel");
     this.$form = self.$el.find("form");    
-    this.$spinner = self.$el.find(".spinner");
     this.$title = self.$el.find(".dialog h3");    
     this.$strings = self.$el.data("strings");
     this.$messages = self.$el.find(".message");
