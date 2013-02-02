@@ -18,6 +18,7 @@ app.DialogView = function (model) {
     this.$title = self.$el.find(".dialog h3");    
     this.$strings = self.$el.data("strings");
     this.$messages = self.$el.find(".message");
+	this.$positionedElement = self.$el.find(".dialog.front");
 
     this.onShow = function (e) {               		
         self.Model.exampleCustomLogic();
@@ -58,7 +59,8 @@ app.DialogView = function (model) {
 		if (self.Model.getDialogVisibility()) {
             self.$el.addClass("active");
         } else {
-            self.$el.removeClass("active");            
+            self.$el.removeClass("active");
+			self.resetDialogPosition();
         }
 		
 		if (self.Model.getIsFlipped()) {
@@ -67,6 +69,10 @@ app.DialogView = function (model) {
             self.$form.removeClass("flipped");            
         }
     };    
+	
+	this.resetDialogPosition = function () {                
+		setTimeout(function() { self.$positionedElement.removeAttr('style'); }, 100);
+	}
 	
     this.initStrings = function () {                
         self.$title.html(self.$strings["title"]);
@@ -82,7 +88,8 @@ app.DialogView = function (model) {
         self.$btnHide.click(self.onHide);
         self.$btnSuccess.click(self.onSuccess);        
 		self.initStrings();
-
+		self.$el.drags({handle:"header"});
+		
         $.subscribe(self.Model.updateNotificationUri, self.render);
 
         return self;

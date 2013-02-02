@@ -134,7 +134,7 @@ input[type="button"] {
 .dialog header h3 {
 	margin: 8px 0 0 15px;
 	line-height:1;
-	cursor: default;
+/*cursor: default;*/
 }
 
 .dialog header {	
