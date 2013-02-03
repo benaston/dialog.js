@@ -157,7 +157,7 @@ background-color: transparent;
 }
 
 .mac .circular-btn {
-line-height: 74px !important; /*important for positioning on mac*/
+line-height: 76px !important; /*important for positioning on mac*/
 }
 
 .circular-btn:active {
