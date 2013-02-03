@@ -148,12 +148,16 @@ float: right;
 margin-right: 10px;
 min-width: 80px;
 border-radius: 40px !important;
-line-height: 76px !important; /*important for positioning on mac*/
-height: 77px !important; /*important for positioning on mac*/
+line-height: 71px !important; /*important for positioning on PC*/
+height: 77px !important;
 font-family: 'pictos';
 font-size: 2.5em;
 text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 background-color: transparent;
+}
+
+.mac .circular-btn {
+line-height: 76px !important; /*important for positioning on mac*/
 }
 
 .circular-btn:active {
