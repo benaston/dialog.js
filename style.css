@@ -148,7 +148,7 @@ float: right;
 margin-right: 10px;
 min-width: 80px;
 border-radius: 40px !important;
-line-height: 77px !important;
+line-height: 76px !important; /*important for positioning on mac*/
 height: 77px !important; /*important for positioning on mac*/
 font-family: 'pictos';
 font-size: 2.5em;
