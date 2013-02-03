@@ -12,7 +12,7 @@
 	</noscript>	
 </head>
 <body>	
-	<input type="button" class="btn-show-dialog btn btn-primary" value="Click Me">	
+	<input type="button" class="btn-show-dialog circular-btn" alt="Open" title="Open" value="Q">	
 	<div class="vertical-line"></div>
 	
 	<div id="gray-curtain"></div>
@@ -30,20 +30,20 @@
 					<article class="waiting">											
 						<p class="message"></p>
 						<menu>
-							<input type="button" class="btn btn-cancel" value="Cancel">	                        
+							<input type="button" class="circular-btn" data-action="cancel" alt="Cancel" title="Cancel" value="*">	                        
 						</menu>
 					</article>
 					<article class="success">
 						<p class="message"></p>
 						<menu>
-							<input type="button" class="btn btn-success" value="Yes">	
-							<input type="button" class="btn btn-cancel" value="No">	
+							<input type="button" class="circular-btn" data-action="success" alt="Yes" title="Yes" value="3">	
+							<input type="button" class="circular-btn" data-action="cancel" alt="No" title="No" value="*">	
 						</menu>
 					</article>
 					<article class="error">
 						<p class="message"></p>
 						<menu>
-							<input type="button" class="btn btn-cancel" value="OK">	
+							<input type="button" class="circular-btn" data-action="cancel" alt="Cancel" title="Cancel" value="3">	
 						</menu>						
 					</article>
 				</section>				
