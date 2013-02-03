@@ -222,20 +222,7 @@ border-color: rgba(0,200,0,0.85) rgba(0,200,0,0.85) rgba(0,200,0,0.85) !importan
 	box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 
-.spinner {	
-	display:inline-block;
-	width:25px;
-	height:25px;
-	position:absolute;
-	right: 27px;
-	top: 20px;
-	border: 2px dashed rgba(0,0,0,.5);
-	border-radius: 20px;
-	-webkit-animation-name: rotate !important;
-	-webkit-animation-duration: 1600ms !important;
-	-webkit-animation-iteration-count: infinite !important;
-	-webkit-animation-timing-function: linear !important;
-}
+
 
 @-webkit-keyframes rotate {
     0% {
@@ -269,4 +256,60 @@ border-color: rgba(0,200,0,0.85) rgba(0,200,0,0.85) rgba(0,200,0,0.85) !importan
 .grabbable {
 	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.5, rgba(0,0,0,0.01)), color-stop(0.75, rgba(0,0,0,0.05)), color-stop(0.75, rgba(0,0,0,0.11)));
 	background-size: 55px 2px;
+}
+
+.three-d-element {
+-webkit-transition: -webkit-transform 1s;
+-webkit-transform-style: preserve-3d;
+}
+
+.spinner {	
+display:inline-block;
+width: 40px;
+height: 40px;
+position:absolute;
+right: 17px;
+top: 12px;
+border: 2px solid rgba(0,0,0,.5);
+border-radius: 40px;
+box-shadow: 0 0 9px 2px rgba(255, 255, 255, .2);
+background: -webkit-linear-gradient(#F4F4F4,#ECECEC) repeat scroll 0 0 transparent;
+-webkit-animation-name: rotateWobble1 !important;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+-webkit-animation-direction: alternate;
+}
+
+.disc {
+position: absolute;
+top: 0;
+left:0;
+width: 40px;
+height: 40px;
+border-radius: 40px;
+box-shadow: 0 0 9px 2px rgba(255, 255, 255, .2);
+opacity: 1;
+background: -webkit-linear-gradient(#F4F4F4,#ECECEC) repeat scroll 0 0 transparent;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+-webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes 'rotateWobble1'
+{       
+	 0%{
+        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
+    
+    30% {
+        -webkit-transform: rotateY(110deg) rotateX(35deg) rotateZ(175deg);
+    }
+    70% {
+        -webkit-transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg);
+    }
+	100% {
+        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
 }
